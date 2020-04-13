@@ -10,12 +10,12 @@ scripts:
 
 
 after_success:
- -  docker build -t azelante\multi-client ./client
- -  docker build -t azelante\multi-nginx ./nginx
- -  docker build -t azelante\multi-server ./server
- -  docker build -t azelante\multi-worker ./worker
+ -  docker build -t azelante/multi-client ./client
+ -  docker build -t azelante/multi-nginx ./nginx
+ -  docker build -t azelante/multi-server ./server
+ -  docker build -t azelante/multi-worker ./worker
  -  echo "$DOCKER_PASSWORD" | docker login -u  "$DOCKER_ID" --password-stdin
- -  docker push azelante\multi-client
- -  docker push azelante\multi-nginx
- -  docker push azelante\multi-server
- -  docker push azelante\multi-worker
+ -  docker push azelante/multi-client
+ -  docker push azelante/multi-nginx
+ -  docker push azelante/multi-server
+ -  docker push azelante/multi-worker
