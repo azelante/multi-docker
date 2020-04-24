@@ -31,6 +31,6 @@
     "image": "azelante/multi-worker",
     "hostname": "worker",
     "essential": false
-  },
+  }
  ]
 }
