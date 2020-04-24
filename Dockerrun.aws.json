@@ -1,0 +1,36 @@
+{
+ "AWSEBDockerrRunVersion": 2,
+ "containerDefinitions": [
+  {
+    "name": "client",
+    "image": "azelante/multi-client",
+    "hostname": "client",
+    "essential": false
+  },
+  {
+    "name": "server",
+    "image": "azelante/multi-client",
+    "hostname": "api",
+    "essential": false
+  },
+  {
+    "name": "nginx",
+    "image": "azelante/multi-client",
+    "hostname": "nginx",
+    "essential": true,
+    "portMappings": [
+	{
+    		"hostPort":80,
+		"containerPort":80
+	}
+    ],
+  "links":["client","server"]
+  },
+  {
+    "name": "worker",
+    "image": "azelante/multi-worker",
+    "hostname": "worker",
+    "essential": false
+  },
+ ]
+}
